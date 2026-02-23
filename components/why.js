@@ -228,7 +228,7 @@ export default function Why() {
                     height="190"
                     clipPath="url(#hmm-clip)"
                   >
-                    <DitherGradient />
+                    <DitherGradient width={215} height={190} />
                   </foreignObject>
                   <path
                     id="hmm"
@@ -334,7 +334,7 @@ export default function Why() {
                     clipPath="url(#hmm-mobile-clip)"
                     overflow="hidden"
                   >
-                    <DitherGradient />
+                    <DitherGradient width={93} height={83} />
                   </foreignObject>
                   <path
                     id="hmm"
@@ -397,7 +397,7 @@ export default function Why() {
                   height="834"
                   clipPath="url(#ellipse9-clip)"
                 >
-                  <DitherGradient />
+                  <DitherGradient width={834} height={834} />
                 </foreignObject>
                 <circle id="ellipse_9" cx="1368" cy="534" r="417" fill="none" />
               </g>
@@ -465,7 +465,7 @@ export default function Why() {
                 clipPath="url(#circle-mobile-clip)"
                 overflow="hidden"
               >
-                <DitherGradient />
+                <DitherGradient width={440} height={440} />
               </foreignObject>
               <circle cx="215" cy="282" r="220" fill="none" />
             </g>

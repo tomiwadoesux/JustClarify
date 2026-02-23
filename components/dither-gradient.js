@@ -209,7 +209,7 @@ function hexToRgb(hex) {
     : [0, 0, 0];
 }
 
-export default function DitherGradient() {
+export default function DitherGradient({ width: propWidth, height: propHeight }) {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
   const startTimeRef = useRef(Date.now());
@@ -328,7 +328,10 @@ export default function DitherGradient() {
       const dpr = window.devicePixelRatio || 1;
       const parent = canvas.parentElement;
       let width, height;
-      if (parent) {
+      if (propWidth && propHeight) {
+        width = propWidth;
+        height = propHeight;
+      } else if (parent) {
         width = parent.clientWidth || window.innerWidth;
         height = parent.clientHeight || window.innerHeight;
       } else {
@@ -413,7 +416,7 @@ export default function DitherGradient() {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationRef.current);
     };
-  }, []);
+  }, [propWidth, propHeight]);
 
   return (
     <div
