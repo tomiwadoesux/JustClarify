@@ -1,5 +1,6 @@
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/smooth-scroll";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -38,8 +39,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${interTight.variable} antialiased`}>{children}</body>
+    <html lang="en" style={{ colorScheme: "light" }}>
+      <body className={`${interTight.variable} antialiased`}>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

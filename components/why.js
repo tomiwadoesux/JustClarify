@@ -332,6 +332,7 @@ export default function Why() {
                     width="93"
                     height="83"
                     clipPath="url(#hmm-mobile-clip)"
+                    overflow="hidden"
                   >
                     <DitherGradient />
                   </foreignObject>
@@ -462,6 +463,7 @@ export default function Why() {
                 width="440"
                 height="440"
                 clipPath="url(#circle-mobile-clip)"
+                overflow="hidden"
               >
                 <DitherGradient />
               </foreignObject>
