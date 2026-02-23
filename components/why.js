@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import Ayotomcs from "./ayotomcs";
 import DitherGradient from "./dither-gradient";
+import OutlineButton from "./outline-button";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -157,10 +158,9 @@ export default function Why() {
           </h4>
         </div>
         <div className="absolute pt-4 top-[100%] md:pl-5 md:top-[38%] lg:top-[32%] right-[51%] md:right-[51%] lg:left-[50%]">
-          <button className=" px-1 md:px-3 py-1 text-nowrap bg-[#2D2D2D] text-xs md:text-sm lg:text-lg text-white outline-btn">
-            {" "}
+          <OutlineButton className="px-1 md:px-3 py-1 text-nowrap text-xs md:text-sm lg:text-lg">
             Get the Extension
-          </button>
+          </OutlineButton>
         </div>
         <div className="absolute hidden md:block top-[95.3%] bg-[#f0f0f0] z-40  left-[0%] pl-3 ">
           <Ayotomcs />
@@ -180,7 +180,7 @@ export default function Why() {
             xmlns="http://www.w3.org/2000/svg"
             className="hidden md:block overflow-visible"
           >
-            <g id="MacBook Pro 14&#34; - 19" clip-path="url(#clip0_150_171)">
+            <g id="MacBook Pro 14&#34; - 19" clipPath="url(#clip0_150_171)">
               <line
                 id="Line 7"
                 x1="762.75"
@@ -188,32 +188,32 @@ export default function Why() {
                 x2="762.75"
                 y2="470"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="Vector"
                 d="M762.031 469.464H0.00695801"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="Vector_2"
                 d="M-0.00012207 0.715332H293"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="Vector_3"
                 d="M293 0.715332H762.033"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <g id="Group 28">
                 <path
                   id="Vector 2"
                   d="M361.419 156.714L382.182 190.302L333.938 192.134V453.509H597.755V319.768L726 237.325L584.931 15.645L361.419 156.714Z"
                   stroke="#8D8D8D"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                 />
                 <g>
                   <defs>
@@ -247,7 +247,7 @@ export default function Why() {
                 id="vlineee"
                 d="M293.096 0.700928V627.1V1481.5"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="Subtract"
@@ -268,7 +268,7 @@ export default function Why() {
                 id="Line27"
                 d="M272.073 234.75 L63.0732 234.75"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 fill="none"
               />
               <circle
@@ -277,8 +277,8 @@ export default function Why() {
                 cy="234"
                 r="22.25"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
-                stroke-dasharray="9 9"
+                strokeWidth="1.5"
+                strokeDasharray="9 9"
               />
               <circle
                 id="Ellipse 15"
@@ -318,7 +318,7 @@ export default function Why() {
                   id="Vector 2"
                   d="M34.8933 118.052L43.8794 132.589L23 133.381V246.5H137.176V188.619L192.678 152.939L131.626 57L34.8933 118.052Z"
                   stroke="#8D8D8D"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                 />
                 <g>
                   <defs>
@@ -356,14 +356,14 @@ export default function Why() {
             xmlns="http://www.w3.org/2000/svg"
             className="hidden md:block"
           >
-            <g id="MacBook Pro 14&#34; - 15" clip-path="url(#clip0_112_2)">
+            <g id="MacBook Pro 14&#34; - 15" clipPath="url(#clip0_112_2)">
               <circle
                 id="Ellipse 10"
                 cx="1368"
                 cy="534"
                 r="533.25"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <circle
                 id="Ellipse11"
@@ -371,8 +371,8 @@ export default function Why() {
                 cy="534"
                 r="474.25"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
-                stroke-dasharray="25 25"
+                strokeWidth="1.5"
+                strokeDasharray="25 25"
               />
               <line
                 id="Line 11"
@@ -381,7 +381,7 @@ export default function Why() {
                 x2="854"
                 y2="391.25"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <g>
                 <defs>
@@ -414,7 +414,7 @@ export default function Why() {
                   cy="585.5"
                   r="14"
                   stroke="#2D2D2D"
-                  stroke-dasharray="5 5"
+                  strokeDasharray="5 5"
                 />
               </g>
             </g>
@@ -434,21 +434,21 @@ export default function Why() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_169_94)">
+          <g clipPath="url(#clip0_169_94)">
             <circle
               cx="215"
               cy="282"
               r="281.25"
               stroke="#8D8D8D"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             />
             <circle
               cx="215"
               cy="282"
               r="250.25"
               stroke="#8D8D8D"
-              stroke-width="1.5"
-              stroke-dasharray="19 19"
+              strokeWidth="1.5"
+              strokeDasharray="19 19"
             />
             <g>
               <defs>
@@ -467,15 +467,20 @@ export default function Why() {
               </foreignObject>
               <circle cx="215" cy="282" r="220" fill="none" />
             </g>
+            {/* <g id="Group8">
+
+           
             <circle
+            id="Ellipse5"
               cx="29"
               cy="112"
               r="13.25"
               stroke="#8D8D8D"
-              stroke-width="1.5"
-              stroke-dasharray="6 6"
+              strokeWidth="1.5"
+              strokeDasharray="6 6"
             />
-            <circle cx="29.5" cy="112.5" r="6.5" fill="#4447A9" />
+            <circle  cx="29.5" cy="112.5" r="6.5" fill="#4447A9" />
+             </g> */}
           </g>
           <defs>
             <clipPath id="clip0_169_94">

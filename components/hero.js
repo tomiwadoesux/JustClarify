@@ -9,7 +9,7 @@ export default function Hero() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g id="MacBook Pro 14&#34; - 10" clip-path="url(#clip0_89_2)">
+          <g id="MacBook Pro 14&#34; - 10" clipPath="url(#clip0_89_2)">
             <rect
               id="video-container"
               y="1033.17"
@@ -22,140 +22,140 @@ export default function Hero() {
                 id="curve4"
                 d="M1185.71 1233.94C1185.71 1320.65 1220.18 1403.81 1281.54 1465.12C1342.89 1526.44 1426.1 1560.88 1512.87 1560.88"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve5"
                 d="M1185.72 1233.94C1185.72 1180.38 1207 1129.02 1244.9 1091.15C1282.79 1053.28 1334.19 1032 1387.78 1032"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve6"
                 d="M1512.87 1157.01C1512.87 1140.59 1509.63 1124.34 1503.35 1109.17C1497.06 1094 1487.85 1080.22 1476.23 1068.61C1464.62 1057.01 1450.83 1047.8 1435.65 1041.52C1420.47 1035.23 1404.21 1032 1387.78 1032"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve7"
                 d="M1512.87 1157.01C1512.87 1167.11 1510.88 1177.11 1507.01 1186.45C1503.14 1195.78 1497.47 1204.26 1490.32 1211.4C1483.18 1218.55 1474.69 1224.21 1465.35 1228.08C1456.01 1231.94 1446 1233.93 1435.89 1233.93"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve8"
                 d="M1387.78 1185.86C1387.78 1192.17 1389.03 1198.42 1391.44 1204.26C1393.86 1210.09 1397.41 1215.39 1401.87 1219.85C1406.34 1224.32 1411.64 1227.86 1417.48 1230.28C1423.32 1232.69 1429.58 1233.94 1435.89 1233.94"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve9"
                 d="M1387.78 1185.86C1387.78 1178.21 1390.82 1170.87 1396.24 1165.46C1401.65 1160.05 1408.99 1157.01 1416.65 1157.01"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2784"
                 d="M1416.65 1185.86V1157.01"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2786"
                 d="M1435.89 1185.86H1387.78"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2788"
                 d="M1416.65 1176.24H1435.89"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2790"
                 d="M1426.27 1176.24V1185.86"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2794"
                 d="M1435.89 1157.01V1233.94"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2796"
                 d="M1387.78 1157.01H1512.87"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2798"
                 d="M1387.78 1233.94V1032"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2800"
                 d="M1512.87 1233.94H1185.71"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2802"
                 d="M1512.87 1032V1560.89"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2804"
                 d="M1 1032.17H1513"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2804_2"
                 d="M1158 1032.16H1214"
                 stroke="#4447A9"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve10"
                 d="M1435.89 1176.24C1435.89 1171.14 1433.86 1166.25 1430.25 1162.64C1426.65 1159.04 1421.75 1157.01 1416.65 1157.01"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve11"
                 d="M1435.89 1176.24C1435.89 1177.5 1435.64 1178.75 1435.16 1179.92C1434.68 1181.09 1433.97 1182.15 1433.07 1183.04C1432.18 1183.93 1431.12 1184.64 1429.95 1185.12C1428.79 1185.61 1427.53 1185.86 1426.27 1185.86"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="curve12"
                 d="M1416.67 1176.23C1416.67 1177.49 1416.92 1178.74 1417.4 1179.9C1417.88 1181.07 1418.59 1182.13 1419.48 1183.02C1420.38 1183.92 1421.44 1184.63 1422.61 1185.11C1423.77 1185.59 1425.02 1185.84 1426.29 1185.84"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 id="rect2804_3"
                 d="M0 1561.17L1513 1561.17"
                 stroke="#8D8D8D"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
             </g>
             <path
               id="longer"
               d="M1186 1564L1186 475"
               stroke="#8D8D8D"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             />
             <path
               id="rect2798_2"
               d="M1186 1060L1186 1004"
               stroke="#4447A9"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             />
             <path
               id="Understand what you read"

@@ -16,8 +16,8 @@ export default function Jw() {
               cy="300.5"
               r="300.5"
               stroke="#8D8D8D"
-              stroke-width="1.5"
-              stroke-dasharray="20 20"
+              strokeWidth="1.5"
+              strokeDasharray="20 20"
             />
             <circle
               id="inner"
@@ -25,7 +25,7 @@ export default function Jw() {
               cy="300.5"
               r="239.5"
               stroke="#8D8D8D"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             />
             <path
               id="JW:25"
@@ -46,7 +46,7 @@ export default function Jw() {
                 cy="390.011"
                 r="9.25868"
                 stroke="#2D2D2D"
-                stroke-dasharray="5 5"
+                strokeDasharray="5 5"
               />
             </g>
           </g>

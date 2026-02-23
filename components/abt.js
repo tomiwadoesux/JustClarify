@@ -430,7 +430,7 @@ export default function Abt() {
               x2="4000"
               y2="975.75"
               stroke="#8D8D8D"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             />
             {/* <line
               id="h-line_2"
@@ -438,7 +438,7 @@ export default function Abt() {
               x2="1512"
               y2="600.75"
               stroke="#8D8D8D"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             /> */}
             <g id="Group_13" ref={groupRef}>
               <line
@@ -448,7 +448,7 @@ export default function Abt() {
                 x2="756.75"
                 y2="992.5"
                 stroke="#4447A9"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <line
                 id="Line 10"
@@ -457,7 +457,7 @@ export default function Abt() {
                 x2="772"
                 y2="975.75"
                 stroke="#4447A9"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
             </g>
             <circle
@@ -466,7 +466,7 @@ export default function Abt() {
               cy="976.5"
               r="233.25"
               stroke="#8D8D8D"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             />
             {/* background */}
             <g id="Group_null">

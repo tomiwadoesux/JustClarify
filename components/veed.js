@@ -91,7 +91,7 @@ export default function Veed() {
                 y={isTablet ? "548" : "560"}
                 fill="white"
                 className={isTablet ? "text-[31px]" : "text-[17px]"}
-                dominant-baseline="middle"
+                dominantBaseline="middle"
               >
                 How it Works
               </text>
@@ -100,14 +100,14 @@ export default function Veed() {
               id="rect2804"
               d="M0.111328 0.75H1185.11"
               stroke="#8D8D8D"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             />
           </g>
           <path
             id="Vector"
             d="M1185.18 0.910645C1185.18 87.6222 1219.64 170.782 1281 232.097C1342.35 293.411 1425.57 327.857 1512.33 327.857"
             stroke="#8D8D8D"
-            stroke-width="1.5"
+            strokeWidth="1.5"
           />
 
           {/* Video rect group - moves up on scroll */}
@@ -131,7 +131,7 @@ export default function Veed() {
             x2="1512"
             y2="582"
             stroke="#8D8D8D"
-            stroke-width="1.5"
+            strokeWidth="1.5"
           />
         </g>
       </svg>

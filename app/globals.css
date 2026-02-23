@@ -54,3 +54,8 @@ body {
     0 35%
   );
 }
+
+.outline-btn:hover,
+.outline-btn:active {
+  transform: none;
+}
