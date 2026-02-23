@@ -1,3 +1,5 @@
+"use client";
+
 export default function Header() {
   return (
     <div className=" z-30">
@@ -44,7 +46,13 @@ export default function Header() {
             </button>
           </div>
           <div className="flex px-6 py-5 right-[21.68%] absolute ">
-            <button className="px-3 py-1 text-nowrap bg-[#2D2D2D] text-white outline-btn">
+            <button
+              onClick={() => {
+                const section = document.getElementById("video-section");
+                if (section) section.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-3 py-1 text-nowrap bg-[#2D2D2D] text-white outline-btn"
+            >
               <h1 className="text-sm md:text-sm  self-center p-0 ">
                 Watch the Demo
               </h1>

@@ -65,7 +65,7 @@ export default function Veed() {
   }, []);
 
   return (
-    <div ref={containerRef} className="overflow-visible">
+    <div id="video-section" ref={containerRef} className="overflow-visible">
       <svg
         width="100%"
         className="-top-[0.1rem] relative hidden md:block overflow-visible"
@@ -112,15 +112,16 @@ export default function Veed() {
 
           {/* Video rect group - moves up on scroll */}
           <g id="vid-group">
-            <rect id="vid" y="1.75" width="1184" height="581" fill="#D9D9D9" />
-
-            {/* Play Icon - centered on the video rect */}
-            <g id="play-icon" transform="translate(542, 241)">
-              {/* Circle background */}
-              <circle cx="50" cy="50" r="50" fill="#4447A9" opacity="0.9" />
-              {/* Play triangle */}
-              <polygon points="40,30 40,70 72,50" fill="#FFFFFF" />
-            </g>
+            <foreignObject id="vid" y="1.75" width="1184" height="581">
+              <video
+                src="/videos/vid.mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </foreignObject>
           </g>
 
           <line
@@ -143,7 +144,16 @@ export default function Veed() {
             </h1>
           </div>
 
-          <div className="bg-black aspect-[16/9]"></div>
+          <div className="bg-black aspect-[16/9] relative">
+            <video
+              src="/videos/vid.mp4"
+              className="w-full h-full object-cover absolute inset-0"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
         </div>
       </div>
     </div>
