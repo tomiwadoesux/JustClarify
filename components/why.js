@@ -127,48 +127,48 @@ export default function Why() {
   return (
     <div>
       <div className="h-[100%] relative">
-        <div className="absolute -top-[11%] md:-top-[3%] pr-3 right-[50%]">
-          <h4 className=" px-2  w-fit bg-[#4447A9] text-white text-base md:text-lg">
+        <div className="absolute -top-[11%] md:-top-[6%] lg:-top-[3%] pr-3 right-[50%]">
+          <h4 className=" px-2  w-fit bg-[#4447A9] text-white text-sm md:text-lg">
             Why it feels different
           </h4>
         </div>
         <div className="absolute top-[1%] pl-3 left-[50%]">
-          <h4 className=" px-2 w-fit bg-[#4447A9] text-white text-base md:text-lg">
+          <h4 className=" px-2 w-fit bg-[#4447A9] text-white text-sm md:text-lg">
             Ambient
           </h4>
-          <h4 className=" text-[#2D2D2D] pt-1 text-base md:text-lg">
+          <h4 className=" text-[#2D2D2D] pt-1 text-sm md:text-lg">
             No tabs. No chat windows. No interruptions.
           </h4>
         </div>
-        <div className="absolute top-[37%] md:top-[12%] pl-3 left-[50%]">
-          <h4 className=" px-2  w-fit bg-[#4447A9] text-white text-base md:text-lg">
+        <div className="absolute top-[37%] md:top-[38%] lg:top-[12%] pl-3 left-[50%]">
+          <h4 className=" px-2  w-fit bg-[#4447A9] text-white text-sm md:text-lg">
             Contextual
           </h4>
-          <h4 className=" text-[#2D2D2D] pt-1 text-base md:text-lg">
+          <h4 className=" text-[#2D2D2D] pt-1 text-sm md:text-lg">
             Reads around the text, not just the text.
           </h4>
         </div>
-        <div className="absolute top-[75%] md:top-[23%] pl-3 left-[50%]">
-          <h4 className=" px-2  w-fit bg-[#4447A9] text-white text-base md:text-lg">
+        <div className="absolute top-[75%] md:top-[20%] lg:top-[23%] pl-3 left-[50%]">
+          <h4 className=" px-2  w-fit bg-[#4447A9] text-white text-sm md:text-lg">
             Concise
           </h4>
-          <h4 className=" text-[#2D2D2D] pt-1 text-base md:text-lg">
+          <h4 className=" text-[#2D2D2D] pt-1 text-sm md:text-lg">
             Explains calmly, without judgment or noise.{" "}
           </h4>
         </div>
-        <div className="absolute pt-4 top-[100%] md:pl-5 md:top-[32%] right-[51%] md:left-[50%]">
-          <button className=" px-1 md:px-3 py-1 text-nowrap bg-[#2D2D2D] text-white outline-btn">
+        <div className="absolute pt-4 top-[100%] md:pl-5 md:top-[38%] lg:top-[32%] right-[51%] md:right-[51%] lg:left-[50%]">
+          <button className=" px-1 md:px-3 py-1 text-nowrap bg-[#2D2D2D] text-xs md:text-sm lg:text-lg text-white outline-btn">
             {" "}
             Get the Extension
           </button>
         </div>
-        <div className="absolute hidden md:block top-[78.3%] bg-[#f0f0f0]   left-[9%]">
+        <div className="absolute hidden md:block top-[95.3%] bg-[#f0f0f0] z-40  left-[0%] pl-3 ">
           <Ayotomcs />
         </div>
 
-        <div className="absolute hidden md:block top-[160%] md:top-[83%] pl-3 left-[2%] md:left-[20%]">
-          <h4 className=" text-[#2D2D2D] pt-1 text-base md:text-lg">
-            © 2026 JustClarify
+        <div className="absolute hidden md:block top-[97%] z-40 pl-3 left-[0%]">
+          <h4 className=" text-[#2D2D2D] pt-1 opacity-70 text-sm md:text-sm">
+            JustClarify © 2026 all rights reserved
           </h4>
         </div>
         <div>
@@ -178,7 +178,7 @@ export default function Why() {
             viewBox="0 0 764 1254"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="hidden md:block"
+            className="hidden md:block overflow-visible"
           >
             <g id="MacBook Pro 14&#34; - 19" clip-path="url(#clip0_150_171)">
               <line
@@ -290,7 +290,7 @@ export default function Why() {
             </g>
             <defs>
               <clipPath id="clip0_150_171">
-                <rect width="764" height="1254" fill="white" />
+                <rect width="764" height="2000" fill="white" />
               </clipPath>
             </defs>
           </svg>
@@ -347,7 +347,7 @@ export default function Why() {
           </svg>
         </div>
 
-        <div className="absolute -bottom-0 w-full ">
+        <div className="absolute lg:-bottom-0 md:-bottom-30 w-full ">
           <svg
             width="100%"
             height="auto"
@@ -426,7 +426,7 @@ export default function Why() {
           </svg>
         </div>
       </div>
-      <div className="md:hidden relative top-0">
+      <div className="md:hidden relative top-37">
         <svg
           width="100%"
           height="auto"
@@ -484,12 +484,12 @@ export default function Why() {
           </defs>
         </svg>
 
-        <div className="absolute md:hidden top-[100%] py-2 bg-[#f0f0f0]   left-[2%]">
+        <div className="absolute md:hidden top-[100%] py-1 bg-[#f0f0f0] z-40  left-[2%]">
           <Ayotomcs />
         </div>
 
-        <div className="absolute md:hidden top-[100%] py-2 md:top-[83%] pl-3 right-[2%] md:left-[20%]">
-          <h4 className=" text-[#2D2D2D] pt-1 text-base md:text-lg">
+        <div className="absolute md:hidden top-[100%] py-1 md:top-[83%] pl-3 z-40 right-[2%] md:left-[20%]">
+          <h4 className=" text-[#2D2D2D] pt-1 text-xs md:text-lg">
             © 2026 JustClarify
           </h4>
         </div>

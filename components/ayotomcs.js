@@ -54,10 +54,9 @@ export default function Ayotomcs() {
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div className="flex flex-row gap-1 overflow-visible">
-        <h4 className="text-right flex-1 p-0 md:text-lg">Designed by</h4>
+        <h4 className="text-right flex-1 p-0 text-xs md:text-sm">Designed by</h4>
         <svg
-          width="21"
-          height="20"
+     
           viewBox="0 0 374 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +64,7 @@ export default function Ayotomcs() {
           style={{ display: "block", cursor: "pointer" }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="overflow-visible self-center"
+          className="overflow-visible self-center md:w-5 md:h-5 w-4 h-4"
         >
           <g id="Group 70">
             <g ref={codeRef} id="code">

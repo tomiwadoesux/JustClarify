@@ -9,8 +9,7 @@ export default function Header() {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-             className="w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8"
-          
+            className="w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8"
           >
             <g clip-path="url(#clip0_6_53)">
               <path
@@ -35,21 +34,40 @@ export default function Header() {
           <h1 className="text-sm md:text-xl  self-center p-0 ">JustClarify</h1>
         </div>
       </div>
-      <div className=" flex flex-col md:flex-row gap-4">
-        <div className="flex px-6 py-5 left-[78.32%] absolute flex-row gap-9">
-          <button className="px-3 py-1 text-nowrap bg-[#4447A9] text-white outline-btn">
-            <h1 className="text-sm md:text-base  self-center p-0 ">
-              Add to Chrome
-            </h1>
-          </button>
+      <div className="hidden md:block">
+        <div className=" flex flex-col md:flex-row gap-4">
+          <div className="flex px-6 py-5 left-[78.32%] absolute ">
+            <button className="px-3 py-1 text-nowrap bg-[#4447A9] text-white outline-btn">
+              <h1 className="text-xs md:text-sm  self-center p-0 ">
+                Add to Chrome
+              </h1>
+            </button>
+          </div>
+          <div className="flex px-6 py-5 right-[21.68%] absolute ">
+            <button className="px-3 py-1 text-nowrap bg-[#2D2D2D] text-white outline-btn">
+              <h1 className="text-sm md:text-sm  self-center p-0 ">
+                Watch the Demo
+              </h1>
+            </button>
+          </div>
         </div>
-        <div className="flex px-6 py-5 right-[21.68%] absolute flex-row gap-9">
-          <button className="px-3 py-1 text-nowrap bg-[#2D2D2D] text-white outline-btn">
-            {" "}
-            <h1 className="text-sm md:text-base  self-center p-0 ">
-              Watch the Demo
-            </h1>
-          </button>
+      </div>
+      <div className="md:hidden  absolute right-3 top-7 flex flex-col gap-4">
+        <div className=" flex flex-col md:flex-row gap-5">
+          <div className="flex px-6   ">
+            <button className="px-4 py-1 text-nowrap bg-[#4447A9] text-white outline-btn">
+              <h1 className="text-xs md:text-sm  self-center p-0 ">
+                Add to Chrome
+              </h1>
+            </button>
+          </div>
+          {/* <div className="flex px-6 ">
+            <button className="px-3 py-1 text-nowrap bg-[#2D2D2D] text-white outline-btn">
+              <h1 className="text-xs md:text-sm  self-center p-0 ">
+                Watch the Demo
+              </h1>
+            </button>
+          </div> */}
         </div>
       </div>
     </div>

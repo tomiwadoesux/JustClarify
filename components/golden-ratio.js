@@ -4,7 +4,27 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import DitherGradient from "./dither-gradient";
 
+function useIsTablet() {
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    // Adding optional chaining or checking for window in case of SSR
+    if (typeof window === "undefined") return;
+
+    const media = window.matchMedia("(max-width: 1024px)");
+    setIsTablet(media.matches);
+
+    const listener = () => setIsTablet(media.matches);
+    media.addEventListener("change", listener);
+
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
+  return isTablet;
+}
+
 export default function GoldenRatio() {
+  const isTablet = useIsTablet();
   const pathRef = useRef(null);
   const containerRef = useRef(null);
   const spiralRef = useRef(null);
@@ -208,16 +228,16 @@ export default function GoldenRatio() {
             stroke-width="1.5"
           />
 
-          <text fill="#2D2D2D" dy="-40" font-size="14">
+          <text fill="#2D2D2D" dy="-40" font-size="15">
             <textPath href="#rect2804" startOffset="5%" textAnchor="start">
               Understand what you read
             </textPath>
           </text>
 
-          <rect x="150" y="-28" width="159" height="18" fill="#4447A9" />
+          <rect x="120" y="-28" width="182" height="18" fill="#4447A9" />
 
-          <text fill="#f0f0f0" dy="-15" font-size="14">
-            <textPath href="#rect2804" startOffset="47%" textAnchor="start">
+          <text fill="#f0f0f0" dy="-15" font-size="15">
+            <textPath href="#rect2804" startOffset="39%" textAnchor="start">
               without leaving the page
             </textPath>
           </text>
@@ -404,12 +424,20 @@ export default function GoldenRatio() {
             />
           </g>
 
-          <path id="understand-path" d="M683.02 21.3 H 1419" fill="none" />
+          <path
+            id="understand-path"
+            d={isTablet ? "M400 21.3 H 1419" : "M683.02 21.3 H 1419"}
+            fill="none"
+          />
 
-          <text fill="#2D2D2D" font-size="18">
+          <text
+            className="fill-[#2D2D2D] lg:text-[18px] md:text-[31px]"
+            fill="#2D2D2D"
+            font-size="13"
+          >
             <textPath
               href="#understand-path"
-              startOffset="7%"
+              startOffset={isTablet ? "5%" : "7%"}
               textAnchor="start"
             >
               Understand what you read
@@ -418,18 +446,27 @@ export default function GoldenRatio() {
 
           <rect
             id="accent-rect"
-            x="-1170"
-            y="1.5"
-            width="215"
-            height="28"
+            className="fill-[#4447A9]"
+            x={isTablet ? "-1170" : "-1170"}
+            y={isTablet ? "-8" : "1.5"}
+            width={isTablet ? "345" : "215"}
+            height={isTablet ? "40" : "28"}
             fill="#4447A9"
             transform="scale(-1, 1)"
           />
-          <path id="without-leaving-path" d="M932 21.3 H 1600" fill="none" />
-          <text fill="#f0f0f0" font-size="18">
+          <path
+            id="without-leaving-path"
+            d={isTablet ? "M600 21.3 H 1600" : "M932 21.3 H 1600"}
+            fill="none"
+          />
+          <text
+            className="fill-[#f0f0f0] lg:text-[18px] md:text-[31px]"
+            fill="#f0f0f0"
+            font-size="18"
+          >
             <textPath
               href="#without-leaving-path"
-              startOffset="5%"
+              startOffset={isTablet ? "23.5%" : "5%"}
               textAnchor="start"
             >
               without leaving the page
@@ -451,7 +488,7 @@ export default function GoldenRatio() {
 
         <defs>
           <clipPath id="clip0_92_2">
-            <rect width="1513" height="244" fill="#f0f0f0" />
+            <rect y="-50" width="1513" height="350" fill="#f0f0f0" />
           </clipPath>
         </defs>
       </svg>

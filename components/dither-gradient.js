@@ -214,11 +214,29 @@ export default function DitherGradient() {
   const animationRef = useRef(null);
   const startTimeRef = useRef(Date.now());
   const textureRef = useRef(null);
+  const isVisibleRef = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const gl = canvas.getContext("webgl");
     if (!gl) return;
+
+    // Render function reference (assigned later, used by observer)
+    let render;
+
+    // Only render when visible in the viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const wasVisible = isVisibleRef.current;
+        isVisibleRef.current = entry.isIntersecting;
+        // Resume rendering when becoming visible
+        if (!wasVisible && entry.isIntersecting && !animationRef.current) {
+          animationRef.current = requestAnimationFrame(render);
+        }
+      },
+      { threshold: 0 },
+    );
+    observer.observe(canvas);
 
     // Create shaders
     const createShader = (type, source) => {
@@ -328,64 +346,62 @@ export default function DitherGradient() {
     window.addEventListener("resize", resize);
     resize();
 
+    // Cache uniform locations (avoid looking them up every frame)
+    const uniforms = {
+      uResolution: gl.getUniformLocation(program, "uResolution"),
+      uTime: gl.getUniformLocation(program, "uTime"),
+      uSpeed: gl.getUniformLocation(program, "uSpeed"),
+      uGradientStyle: gl.getUniformLocation(program, "uGradientStyle"),
+      uDitherStyle: gl.getUniformLocation(program, "uDitherStyle"),
+      uDitherSize: gl.getUniformLocation(program, "uDitherSize"),
+      uDitherOpacity: gl.getUniformLocation(program, "uDitherOpacity"),
+      uColorCount: gl.getUniformLocation(program, "uColorCount"),
+      uImage: gl.getUniformLocation(program, "uImage"),
+      uHasImage: gl.getUniformLocation(program, "uHasImage"),
+      uImageResolution: gl.getUniformLocation(program, "uImageResolution"),
+      uImageOpacity: gl.getUniformLocation(program, "uImageOpacity"),
+      uImageScale: gl.getUniformLocation(program, "uImageScale"),
+      uColors: gl.getUniformLocation(program, "uColors"),
+    };
+
+    // Pre-compute color array (static config, no need to rebuild every frame)
+    const colorArray = [];
+    for (let i = 0; i < 8; i++) {
+      const hex = CONFIG.colors[i] || CONFIG.colors[CONFIG.colors.length - 1];
+      colorArray.push(...hexToRgb(hex));
+    }
+    const colorFloat32 = new Float32Array(colorArray);
+
+    // Set static uniforms once
+    gl.uniform1f(uniforms.uSpeed, CONFIG.speed);
+    gl.uniform1i(uniforms.uGradientStyle, CONFIG.gradientStyle);
+    gl.uniform1i(uniforms.uDitherStyle, CONFIG.ditherStyle);
+    gl.uniform1f(uniforms.uDitherSize, CONFIG.ditherSize);
+    gl.uniform1f(uniforms.uDitherOpacity, CONFIG.ditherOpacity);
+    gl.uniform1i(uniforms.uColorCount, CONFIG.colors.length);
+    gl.uniform1f(uniforms.uImageOpacity, CONFIG.imageOpacity);
+    gl.uniform1f(uniforms.uImageScale, CONFIG.imageScale);
+    gl.uniform3fv(uniforms.uColors, colorFloat32);
+
     // Render
-    const render = () => {
+    render = () => {
+      // Skip rendering when off-screen
+      if (!isVisibleRef.current) {
+        animationRef.current = null;
+        return;
+      }
+
       const time = (Date.now() - startTimeRef.current) / 1000;
-      gl.useProgram(program);
 
-      gl.uniform2f(
-        gl.getUniformLocation(program, "uResolution"),
-        gl.canvas.width,
-        gl.canvas.height,
-      );
-      gl.uniform1f(gl.getUniformLocation(program, "uTime"), time);
-      gl.uniform1f(gl.getUniformLocation(program, "uSpeed"), CONFIG.speed);
-      gl.uniform1i(
-        gl.getUniformLocation(program, "uGradientStyle"),
-        CONFIG.gradientStyle,
-      );
-      gl.uniform1i(
-        gl.getUniformLocation(program, "uDitherStyle"),
-        CONFIG.ditherStyle,
-      );
-      gl.uniform1f(
-        gl.getUniformLocation(program, "uDitherSize"),
-        CONFIG.ditherSize,
-      );
-      gl.uniform1f(
-        gl.getUniformLocation(program, "uDitherOpacity"),
-        CONFIG.ditherOpacity,
-      );
-      gl.uniform1i(
-        gl.getUniformLocation(program, "uColorCount"),
-        CONFIG.colors.length,
-      );
+      gl.uniform2f(uniforms.uResolution, gl.canvas.width, gl.canvas.height);
+      gl.uniform1f(uniforms.uTime, time);
 
-      // Image Uniforms
+      // Image Uniforms (dynamic ones only)
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, textureRef.current);
-      gl.uniform1i(gl.getUniformLocation(program, "uImage"), 0);
-      gl.uniform1i(gl.getUniformLocation(program, "uHasImage"), hasImage);
-      gl.uniform2f(
-        gl.getUniformLocation(program, "uImageResolution"),
-        imgAspect.w,
-        imgAspect.h,
-      );
-      gl.uniform1f(
-        gl.getUniformLocation(program, "uImageOpacity"),
-        CONFIG.imageOpacity,
-      );
-      gl.uniform1f(
-        gl.getUniformLocation(program, "uImageScale"),
-        CONFIG.imageScale,
-      );
-
-      const colorArray = [];
-      for (let i = 0; i < 8; i++) {
-        const hex = CONFIG.colors[i] || CONFIG.colors[CONFIG.colors.length - 1];
-        colorArray.push(...hexToRgb(hex));
-      }
-      gl.uniform3fv(gl.getUniformLocation(program, "uColors"), colorArray);
+      gl.uniform1i(uniforms.uImage, 0);
+      gl.uniform1i(uniforms.uHasImage, hasImage);
+      gl.uniform2f(uniforms.uImageResolution, imgAspect.w, imgAspect.h);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       animationRef.current = requestAnimationFrame(render);
@@ -393,6 +409,7 @@ export default function DitherGradient() {
     render();
 
     return () => {
+      observer.disconnect();
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationRef.current);
     };

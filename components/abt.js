@@ -13,10 +13,12 @@ export default function Abt() {
   const containerRef = useRef(null);
   const [textWidth, setTextWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth < 768);
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth <= 1024);
     };
 
     checkMobile();
@@ -153,7 +155,7 @@ export default function Abt() {
       tl.to(
         "#text-bottom-old",
         {
-          y: isMobile ? 60 : 30,
+          y: isMobile ? 60 : isTablet ? 50 : 30,
           opacity: 0,
           ease: "power1.inOut",
           duration: textSwitchDuration,
@@ -252,7 +254,7 @@ export default function Abt() {
       tl.to(
         "#text-bottom-new",
         {
-          y: isMobile ? 60 : 30,
+          y: isMobile ? 60 : isTablet ? 50 : 30,
           opacity: 0,
           ease: "power1.inOut",
           duration: textSwitchDuration,
@@ -323,7 +325,13 @@ export default function Abt() {
         <svg
           width="100%"
           height={isMobile ? "100%" : "auto"}
-          viewBox={isMobile ? "506 -24 500 2000" : "0 600 1512 900"}
+          viewBox={
+            isMobile
+              ? "506 -24 500 2000"
+              : isTablet
+                ? "256 476 1000 1000"
+                : "0 600 1512 900"
+          }
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio={isMobile ? "xMidYMid slice" : "xMidYMid meet"}
@@ -333,7 +341,12 @@ export default function Abt() {
               <rect x="567" y="991" width="160" height="28" />
             </clipPath>
             <clipPath id="abt-clip-bottom">
-              <rect x={rectX} y="938" width="600" height={HEIGHT} />
+              <rect
+                x={rectX}
+                y="938"
+                width="600"
+                height={isTablet ? 60 : HEIGHT}
+              />
             </clipPath>
             <clipPath id="abt-clip-bottom-mobile">
               <rect x="770" y="925" width="250" height="100" />
@@ -461,7 +474,7 @@ export default function Abt() {
                 x={rectX}
                 y="938"
                 width={rectWidth}
-                height={isMobile ? 50 : HEIGHT}
+                height={isMobile ? 50 : isTablet ? 60 : HEIGHT}
                 rx="0"
               />
 
@@ -516,6 +529,27 @@ export default function Abt() {
                         </textPath>
                       </text>
                     </>
+                  ) : isTablet ? (
+                    <>
+                      <text fill="#2D2D2D" fontSize="18" x="12" dy="10">
+                        <textPath
+                          href="#From-blogs"
+                          startOffset="0%"
+                          textAnchor="start"
+                        >
+                          From blogs, long articles…
+                        </textPath>
+                      </text>
+                      <text fill="#2D2D2D" fontSize="18" x="12" dy="31">
+                        <textPath
+                          href="#From-blogs"
+                          startOffset="0%"
+                          textAnchor="start"
+                        >
+                          Whatever you're reading
+                        </textPath>
+                      </text>
+                    </>
                   ) : (
                     // Desktop: Standard Single Line
                     <text
@@ -540,7 +574,11 @@ export default function Abt() {
                 <g
                   id="text-bottom-new"
                   transform={
-                    isMobile ? "translate(0, -60)" : "translate(0, -30)"
+                    isMobile
+                      ? "translate(0, -60)"
+                      : isTablet
+                        ? "translate(0, -50)"
+                        : "translate(0, -30)"
                   }
                   opacity={0}
                 >
@@ -579,6 +617,27 @@ export default function Abt() {
                         </textPath>
                       </text>
                     </>
+                  ) : isTablet ? (
+                    <>
+                      <text fill="#2D2D2D" fontSize="18" x="12" dy="19">
+                        <textPath
+                          href="#From-blogs"
+                          startOffset="0%"
+                          textAnchor="start"
+                        >
+                          The explanations stay tied
+                        </textPath>
+                      </text>
+                      <text fill="#2D2D2D" fontSize="18" x="12" dy="43">
+                        <textPath
+                          href="#From-blogs"
+                          startOffset="0%"
+                          textAnchor="start"
+                        >
+                          to the highlighted text and its context.
+                        </textPath>
+                      </text>
+                    </>
                   ) : (
                     <text fill="#2D2D2D" fontSize="18" x="12" dy="19">
                       <textPath
@@ -597,7 +656,11 @@ export default function Abt() {
                 <g
                   id="text-bottom-final"
                   transform={
-                    isMobile ? "translate(0, -60)" : "translate(0, -30)"
+                    isMobile
+                      ? "translate(0, -60)"
+                      : isTablet
+                        ? "translate(0, -50)"
+                        : "translate(0, -30)"
                   }
                   opacity={0}
                 >
@@ -627,6 +690,27 @@ export default function Abt() {
 
                       {/* Mobile Line 3 */}
                       <text fill="#2D2D2D" fontSize="18" x="1" dy="59">
+                        <textPath
+                          href="#From-blogs"
+                          startOffset="0%"
+                          textAnchor="start"
+                        >
+                          generated follow-ups
+                        </textPath>
+                      </text>
+                    </>
+                  ) : isTablet ? (
+                    <>
+                      <text fill="#2D2D2D" fontSize="18" x="12" dy="19">
+                        <textPath
+                          href="#From-blogs"
+                          startOffset="0%"
+                          textAnchor="start"
+                        >
+                          One click for simpler or deeper explanation and
+                        </textPath>
+                      </text>
+                      <text fill="#2D2D2D" fontSize="18" x="12" dy="43">
                         <textPath
                           href="#From-blogs"
                           startOffset="0%"

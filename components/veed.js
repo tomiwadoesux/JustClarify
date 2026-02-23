@@ -6,7 +6,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+function useIsTablet() {
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const media = window.matchMedia("(max-width: 1024px)");
+    setIsTablet(media.matches);
+
+    const listener = () => setIsTablet(media.matches);
+    media.addEventListener("change", listener);
+
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
+  return isTablet;
+}
+
 export default function Veed() {
+  const isTablet = useIsTablet();
   const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
 
@@ -59,13 +78,19 @@ export default function Veed() {
         <g id="Group 39">
           <g id="Group 21">
             <g id="Frame2">
-              <rect x="1195" y="10" width="117" height="28" fill="#4447A9" />
+              <rect
+                x={isTablet ? "1200" : "1195"}
+                y={isTablet ? "525" : "545"}
+                width={isTablet ? "195" : "117"}
+                height={isTablet ? "40" : "28"}
+                fill="#4447A9"
+              />
 
               <text
-                x="1204"
-                y="26"
+                x={isTablet ? "1211" : "1204"}
+                y={isTablet ? "548" : "560"}
                 fill="white"
-                font-size="17"
+                className={isTablet ? "text-[31px]" : "text-[17px]"}
                 dominant-baseline="middle"
               >
                 How it Works
@@ -112,7 +137,7 @@ export default function Veed() {
 
       <div className="md:hidden">
         <div className="">
-          <div className="pt-8 pb-2 px-4 justify-end flex  ">
+          <div className="pt-2 pb-2 px-4 justify-left flex  ">
             <h1 className="text-base text-[#fafafa] bg-[#4447a9] text-right  w-fit px-2 py-0">
               How it works
             </h1>
