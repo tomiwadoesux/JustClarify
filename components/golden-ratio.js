@@ -254,7 +254,7 @@ export default function GoldenRatio() {
             id="rect2804"
             d="M0.287109 3.05176e-05L327.287 1.93033e-06"
             stroke="#8D8D8D"
-            strokeWidth="1.5"
+            strokeWidth="2.5"
           />
 
           <path
