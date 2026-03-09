@@ -217,16 +217,19 @@ export default function Why() {
                 />
                 <g>
                   <defs>
-                    <clipPath id="hmm-clip">
-                      <path d="M595.923 190.913H383.403L503.709 379.005L595.923 320.989V190.913Z" />
-                    </clipPath>
+                    <mask id="hmm-clip">
+                      <path
+                        d="M595.923 190.913H383.403L503.709 379.005L595.923 320.989V190.913Z"
+                        fill="white"
+                      />
+                    </mask>
                   </defs>
                   <foreignObject
                     x="383"
                     y="190"
                     width="215"
                     height="190"
-                    clipPath="url(#hmm-clip)"
+                    mask="url(#hmm-clip)"
                   >
                     <DitherGradient width={215} height={190} />
                   </foreignObject>
@@ -322,16 +325,19 @@ export default function Why() {
                 />
                 <g>
                   <defs>
-                    <clipPath id="hmm-mobile-clip">
-                      <path d="M136.383 132.853H44.408L96.4742 214.256L136.383 189.148V132.853Z" />
-                    </clipPath>
+                    <mask id="hmm-mobile-clip">
+                      <path
+                        d="M136.383 132.853H44.408L96.4742 214.256L136.383 189.148V132.853Z"
+                        fill="white"
+                      />
+                    </mask>
                   </defs>
                   <foreignObject
                     x="44"
                     y="132"
                     width="93"
                     height="83"
-                    clipPath="url(#hmm-mobile-clip)"
+                    mask="url(#hmm-mobile-clip)"
                     overflow="hidden"
                   >
                     <DitherGradient width={93} height={83} />
@@ -386,16 +392,16 @@ export default function Why() {
               />
               <g>
                 <defs>
-                  <clipPath id="ellipse9-clip">
-                    <circle cx="1368" cy="534" r="417" />
-                  </clipPath>
+                  <mask id="ellipse9-clip">
+                    <circle cx="1368" cy="534" r="417" fill="white" />
+                  </mask>
                 </defs>
                 <foreignObject
                   x="951"
                   y="117"
                   width="834"
                   height="834"
-                  clipPath="url(#ellipse9-clip)"
+                  mask="url(#ellipse9-clip)"
                 >
                   <DitherGradient width={834} height={834} />
                 </foreignObject>
@@ -453,16 +459,16 @@ export default function Why() {
             />
             <g>
               <defs>
-                <clipPath id="circle-mobile-clip">
-                  <circle cx="215" cy="282" r="220" />
-                </clipPath>
+                <mask id="circle-mobile-clip">
+                  <circle cx="215" cy="282" r="220" fill="white" />
+                </mask>
               </defs>
               <foreignObject
                 x="-5"
                 y="62"
                 width="440"
                 height="440"
-                clipPath="url(#circle-mobile-clip)"
+                mask="url(#circle-mobile-clip)"
                 overflow="hidden"
               >
                 <DitherGradient width={440} height={440} />

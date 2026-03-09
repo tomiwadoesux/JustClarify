@@ -1,4 +1,4 @@
-import { Inter_Tight } from "next/font/google";
+qimport { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/smooth-scroll";
 
