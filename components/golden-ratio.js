@@ -123,7 +123,7 @@ export default function GoldenRatio() {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-[100vh] bg-[] w-full relative">
+    <div ref={containerRef} className="min-h-[100svh] md:h-[100vh] w-full relative">
       {/* <div
         className="absolute bg-black w-full h right-[21.68%]"
         style={{
@@ -139,16 +139,23 @@ export default function GoldenRatio() {
           className="w-full h-full object-cover"
         />
       </div> */}
-      <svg
-        width="100%"
-        height="auto"
-        viewBox="0 0 328 202"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute bottom-0 left-0 md:hidden pointer-events-none"
-        preserveAspectRatio="xMidYMax meet"
-      >
-        <g id="Group 37">
+      <div className="absolute bottom-0 left-0 w-full md:hidden pointer-events-none">
+        <div className="absolute left-3 right-3 top-2 z-10 flex flex-wrap items-center gap-x-1 gap-y-1 text-[14px] leading-none text-[#2D2D2D]">
+          <span>Understand what you read</span>
+          <span className="bg-[#4447A9] px-1 py-[2px] text-[#f0f0f0]">
+            without leaving the page
+          </span>
+        </div>
+        <svg
+          width="100%"
+          height="auto"
+          viewBox="0 0 328 202"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="block w-full"
+          preserveAspectRatio="xMidYMax meet"
+        >
+          <g id="Group 37">
           <path
             id="curve6"
             d="M327.157 125.008C327.157 108.592 323.921 92.3362 317.635 77.1695C311.349 62.0029 302.135 48.2221 290.519 36.614C278.904 25.0059 265.114 15.7979 249.937 9.51567C234.761 3.23342 218.495 2.91804e-05 202.068 3.05176e-05"
@@ -228,19 +235,6 @@ export default function GoldenRatio() {
             strokeWidth="1.5"
           />
 
-          <text fill="#2D2D2D" dy="-40" fontSize="15">
-            <textPath href="#rect2804" startOffset="5%" textAnchor="start">
-              Understand what you read
-            </textPath>
-          </text>
-
-          <rect x="120" y="-28" width="182" height="18" fill="#4447A9" />
-
-          <text fill="#f0f0f0" dy="-15" fontSize="15">
-            <textPath href="#rect2804" startOffset="39%" textAnchor="start">
-              without leaving the page
-            </textPath>
-          </text>
           <path
             id="curve10"
             d="M250.178 144.24C250.178 139.14 248.151 134.248 244.542 130.642C240.933 127.035 236.039 125.009 230.935 125.009"
@@ -259,8 +253,9 @@ export default function GoldenRatio() {
             stroke="#8D8D8D"
             strokeWidth="1.5"
           />
-        </g>
-      </svg>
+          </g>
+        </svg>
+      </div>
 
       <svg
         width="100%"

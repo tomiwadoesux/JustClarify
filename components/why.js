@@ -9,6 +9,22 @@ import OutlineButton from "./outline-button";
 
 gsap.registerPlugin(MotionPathPlugin);
 
+function ClippedGradientLayer({ width, height, clipPath, style, className = "" }) {
+  return (
+    <div
+      aria-hidden="true"
+      className={`absolute overflow-hidden ${className}`.trim()}
+      style={{
+        clipPath,
+        WebkitClipPath: clipPath,
+        ...style,
+      }}
+    >
+      <DitherGradient width={width} height={height} />
+    </div>
+  );
+}
+
 export default function Why() {
   // Animation for Ellipse 5 rotating and Group 8 following Ellipse 11 path
   useEffect(() => {
@@ -297,54 +313,54 @@ export default function Why() {
               </clipPath>
             </defs>
           </svg>
-          <div
-            className="hidden md:block absolute"
-            style={{
-              top: "15%",
-              left: "50.13%",
-              width: "14.1%",
-              aspectRatio: "215/189",
-              clipPath: "polygon(100% 0%, 0% 0%, 56.61% 99.52%, 100% 68.82%)",
-              zIndex: 10,
-            }}
-          >
-            <DitherGradient width={215} height={190} />
+          <div className="relative md:hidden w-[50.35%]">
+            <ClippedGradientLayer
+              width={93}
+              height={83}
+              clipPath="polygon(0.44% 1.03%, 99.34% 1.03%, 99.34% 68.85%, 56.42% 99.10%)"
+              style={{
+                left: "20.47%",
+                top: "43.42%",
+                width: "43.26%",
+                height: "27.30%",
+              }}
+            />
+            <svg
+              width="100%"
+              height="auto"
+              viewBox="0 0 215 304"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="relative z-10 block h-auto w-full"
+            >
+              <g id="Group 102">
+                <g id="Rectangle 231">
+                  <mask id="path-1-inside-1_198_33" fill="white">
+                    <path d="M0 0H215V304H0V0Z" />
+                  </mask>
+                  <path
+                    d="M215 0H216.5V-1.5H215V0ZM215 304V305.5H216.5V304H215ZM0 0V1.5H215V0V-1.5H0V0ZM215 0H213.5V304H215H216.5V0H215ZM215 304V302.5H0V304V305.5H215V304Z"
+                    fill="#8D8D8D"
+                    mask="url(#path-1-inside-1_198_33)"
+                  />
+                </g>
+                <g id="Group 27">
+                  <path
+                    id="Vector 2"
+                    d="M34.8933 118.052L43.8794 132.589L23 133.381V246.5H137.176V188.619L192.678 152.939L131.626 57L34.8933 118.052Z"
+                    stroke="#8D8D8D"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    id="hmm"
+                    d="M136.383 132.853H44.408L96.4742 214.256L136.383 189.148V132.853Z"
+                    fill="none"
+                    stroke="#8D8D8D"
+                  />
+                </g>
+              </g>
+            </svg>
           </div>
-          <svg
-            width="50.35%"
-            height="auto  "
-            viewBox="0 0 215 304"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="md:hidden"
-          >
-            <g id="Group 102">
-              <g id="Rectangle 231">
-                <mask id="path-1-inside-1_198_33" fill="white">
-                  <path d="M0 0H215V304H0V0Z" />
-                </mask>
-                <path
-                  d="M215 0H216.5V-1.5H215V0ZM215 304V305.5H216.5V304H215ZM0 0V1.5H215V0V-1.5H0V0ZM215 0H213.5V304H215H216.5V0H215ZM215 304V302.5H0V304V305.5H215V304Z"
-                  fill="#8D8D8D"
-                  mask="url(#path-1-inside-1_198_33)"
-                />
-              </g>
-              <g id="Group 27">
-                <path
-                  id="Vector 2"
-                  d="M34.8933 118.052L43.8794 132.589L23 133.381V246.5H137.176V188.619L192.678 152.939L131.626 57L34.8933 118.052Z"
-                  stroke="#8D8D8D"
-                  strokeWidth="1.5"
-                />
-                <path
-                  id="hmm"
-                  d="M136.383 132.853H44.408L96.4742 214.256L136.383 189.148V132.853Z"
-                  fill="none"
-                  stroke="#8D8D8D"
-                />
-              </g>
-            </g>
-          </svg>
         </div>
 
         <div className="absolute lg:-bottom-0 md:-bottom-30 w-full ">
@@ -383,7 +399,23 @@ export default function Why() {
                 stroke="#8D8D8D"
                 strokeWidth="1.5"
               />
-              <circle id="ellipse_9" cx="1368" cy="534" r="417" fill="none" />
+              <g>
+                <defs>
+                  <mask id="ellipse9-clip">
+                    <circle cx="1368" cy="534" r="417" fill="white" />
+                  </mask>
+                </defs>
+                <foreignObject
+                  x="951"
+                  y="117"
+                  width="834"
+                  height="834"
+                  mask="url(#ellipse9-clip)"
+                >
+                  <DitherGradient width={834} height={834} />
+                </foreignObject>
+                <circle id="ellipse_9" cx="1368" cy="534" r="417" fill="none" />
+              </g>
               <g id="Group8">
                 <circle
                   id="Ellipse 4"
@@ -408,48 +440,49 @@ export default function Why() {
               </clipPath>
             </defs>
           </svg>
-          <div
-            className="hidden md:block absolute"
-            style={{
-              width: "834px",
-              height: "834px",
-              borderRadius: "50%",
-              overflow: "hidden",
-              top: "117px",
-              left: "951px",
-              zIndex: -1,
-            }}
-          >
-            <DitherGradient width={834} height={834} />
-          </div>
         </div>
       </div>
       <div className="md:hidden relative top-37">
-        <svg
-          width="100%"
-          height="auto"
-          viewBox="0 0 430 222"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clipPath="url(#clip0_169_94)">
-            <circle
-              cx="215"
-              cy="282"
-              r="281.25"
-              stroke="#8D8D8D"
-              strokeWidth="1.5"
-            />
-            <circle
-              cx="215"
-              cy="282"
-              r="250.25"
-              stroke="#8D8D8D"
-              strokeWidth="1.5"
-              strokeDasharray="19 19"
-            />
-            <circle cx="215" cy="282" r="220" fill="none" />
-            {/* <g id="Group8">
+        <div className="relative overflow-hidden">
+          <ClippedGradientLayer
+            width={440}
+            height={440}
+            clipPath="circle(50%)"
+            style={{
+              left: "-1.16%",
+              top: "27.93%",
+              width: "102.33%",
+              aspectRatio: "1 / 1",
+            }}
+          />
+          <svg
+            width="100%"
+            height="auto"
+            viewBox="0 0 430 222"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="relative z-10 block h-auto w-full"
+          >
+            <g clipPath="url(#clip0_169_94)">
+              <circle
+                cx="215"
+                cy="282"
+                r="281.25"
+                stroke="#8D8D8D"
+                strokeWidth="1.5"
+              />
+              <circle
+                cx="215"
+                cy="282"
+                r="250.25"
+                stroke="#8D8D8D"
+                strokeWidth="1.5"
+                strokeDasharray="19 19"
+              />
+              <g>
+                <circle cx="215" cy="282" r="220" fill="none" />
+              </g>
+              {/* <g id="Group8">
 
            
             <circle
@@ -463,32 +496,24 @@ export default function Why() {
             />
             <circle  cx="29.5" cy="112.5" r="6.5" fill="#4447A9" />
              </g> */}
-          </g>
-          <defs>
-            <clipPath id="clip0_169_94">
-              <rect width="430" height="222" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-        <div
-          className="md:hidden absolute inset-0 mx-auto"
-          style={{
-            width: "440px",
-            height: "440px",
-            top: "62px",
-            borderRadius: "50%",
-            overflow: "hidden",
-            zIndex: -1,
-          }}
-        >
-          <DitherGradient width={440} height={440} />
+            </g>
+            <defs>
+              <clipPath id="clip0_169_94">
+                <rect width="430" height="222" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
         </div>
 
         <div className="absolute md:hidden top-[100%] py-1 bg-[#f0f0f0] z-40  left-[2%]">
           <Ayotomcs />
         </div>
 
-        <div className="absolute md:hidden top-[100%] py-1 md:top-[83%] pl-3 z-40 right-[2%] md:left-[20%]"></div>
+        <div className="absolute md:hidden top-[100%] py-1 md:top-[83%] pl-3 z-40 right-[2%] md:left-[20%]">
+          <h4 className=" text-[#2D2D2D] pt-1 text-xs md:text-lg">
+            © 2026 JustClarify
+          </h4>
+        </div>
       </div>
     </div>
   );
