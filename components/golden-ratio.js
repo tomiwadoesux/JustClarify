@@ -27,7 +27,7 @@ export default function GoldenRatio() {
   const isTablet = useIsTablet();
   const pathRef = useRef(null);
   const containerRef = useRef(null);
-  const spiralRef = useRef(null);
+  const mobileAccentRef = useRef(null);
   const [topPx, setTopPx] = useState(0);
 
   // Generate 99 random rectangle indices (from 21-230) to fill with accent color
@@ -117,6 +117,23 @@ export default function GoldenRatio() {
       );
     }
 
+    if (mobileAccentRef.current) {
+      gsap.set(mobileAccentRef.current, {
+        scaleX: 0,
+        transformOrigin: "left center",
+      });
+
+      tl.to(
+        mobileAccentRef.current,
+        {
+          scaleX: 1,
+          duration: 0.9,
+          ease: "power1.inOut",
+        },
+        ">-0.9",
+      );
+    }
+
     return () => {
       tl.kill();
     };
@@ -140,10 +157,15 @@ export default function GoldenRatio() {
         />
       </div> */}
       <div className="absolute bottom-0 left-0 w-full md:hidden pointer-events-none">
-        <div className="absolute left-3 right-3 top-2 z-10 flex flex-wrap items-center gap-x-1 gap-y-1 text-[14px] leading-none text-[#2D2D2D]">
+        <div className="absolute left-3 right-3 -top-9 z-10 flex flex-wrap items-center gap-x-1 gap-y-1 text-[14px] leading-none text-[#2D2D2D]">
           <span>Understand what you read</span>
-          <span className="bg-[#4447A9] px-1 py-[2px] text-[#f0f0f0]">
-            without leaving the page
+          <span className="relative px-1 py-[2px] text-[#f0f0f0]">
+            <span
+              ref={mobileAccentRef}
+              aria-hidden="true"
+              className="absolute inset-0 bg-[#4447A9]"
+            />
+            <span className="relative">without leaving the page</span>
           </span>
         </div>
         <svg
