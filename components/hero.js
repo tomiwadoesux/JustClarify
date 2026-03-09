@@ -9,7 +9,7 @@ export default function Hero() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g id="MacBook Pro 14&#34; - 10">
+          <g id="MacBook Pro 14&#34; - 10" clipPath="url(#clip0_89_2)">
             <rect
               id="video-container"
               y="1033.17"
@@ -176,7 +176,11 @@ export default function Hero() {
               fill="white"
             />
           </g>
-          <defs></defs>
+          <defs>
+            <clipPath id="clip0_89_2">
+              <rect width="1514" height="1563" fill="white" />
+            </clipPath>
+          </defs>
         </svg>
       </div>
     </div>

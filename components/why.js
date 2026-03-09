@@ -297,6 +297,19 @@ export default function Why() {
               </clipPath>
             </defs>
           </svg>
+          <div
+            className="hidden md:block absolute"
+            style={{
+              top: "15%",
+              left: "50.13%",
+              width: "14.1%",
+              aspectRatio: "215/189",
+              clipPath: "polygon(100% 0%, 0% 0%, 56.61% 99.52%, 100% 68.82%)",
+              zIndex: 10,
+            }}
+          >
+            <DitherGradient width={215} height={190} />
+          </div>
           <svg
             width="50.35%"
             height="auto  "
@@ -323,32 +336,12 @@ export default function Why() {
                   stroke="#8D8D8D"
                   strokeWidth="1.5"
                 />
-                <g>
-                  <defs>
-                    <mask id="hmm-mobile-clip">
-                      <path
-                        d="M136.383 132.853H44.408L96.4742 214.256L136.383 189.148V132.853Z"
-                        fill="white"
-                      />
-                    </mask>
-                  </defs>
-                  <foreignObject
-                    x="44"
-                    y="132"
-                    width="93"
-                    height="83"
-                    mask="url(#hmm-mobile-clip)"
-                    overflow="hidden"
-                  >
-                    <DitherGradient width={93} height={83} />
-                  </foreignObject>
-                  <path
-                    id="hmm"
-                    d="M136.383 132.853H44.408L96.4742 214.256L136.383 189.148V132.853Z"
-                    fill="none"
-                    stroke="#8D8D8D"
-                  />
-                </g>
+                <path
+                  id="hmm"
+                  d="M136.383 132.853H44.408L96.4742 214.256L136.383 189.148V132.853Z"
+                  fill="none"
+                  stroke="#8D8D8D"
+                />
               </g>
             </g>
           </svg>
@@ -390,23 +383,7 @@ export default function Why() {
                 stroke="#8D8D8D"
                 strokeWidth="1.5"
               />
-              <g>
-                <defs>
-                  <mask id="ellipse9-clip">
-                    <circle cx="1368" cy="534" r="417" fill="white" />
-                  </mask>
-                </defs>
-                <foreignObject
-                  x="951"
-                  y="117"
-                  width="834"
-                  height="834"
-                  mask="url(#ellipse9-clip)"
-                >
-                  <DitherGradient width={834} height={834} />
-                </foreignObject>
-                <circle id="ellipse_9" cx="1368" cy="534" r="417" fill="none" />
-              </g>
+              <circle id="ellipse_9" cx="1368" cy="534" r="417" fill="none" />
               <g id="Group8">
                 <circle
                   id="Ellipse 4"
@@ -431,6 +408,20 @@ export default function Why() {
               </clipPath>
             </defs>
           </svg>
+          <div
+            className="hidden md:block absolute"
+            style={{
+              width: "834px",
+              height: "834px",
+              borderRadius: "50%",
+              overflow: "hidden",
+              top: "117px",
+              left: "951px",
+              zIndex: -1,
+            }}
+          >
+            <DitherGradient width={834} height={834} />
+          </div>
         </div>
       </div>
       <div className="md:hidden relative top-37">
@@ -457,24 +448,7 @@ export default function Why() {
               strokeWidth="1.5"
               strokeDasharray="19 19"
             />
-            <g>
-              <defs>
-                <mask id="circle-mobile-clip">
-                  <circle cx="215" cy="282" r="220" fill="white" />
-                </mask>
-              </defs>
-              <foreignObject
-                x="-5"
-                y="62"
-                width="440"
-                height="440"
-                mask="url(#circle-mobile-clip)"
-                overflow="hidden"
-              >
-                <DitherGradient width={440} height={440} />
-              </foreignObject>
-              <circle cx="215" cy="282" r="220" fill="none" />
-            </g>
+            <circle cx="215" cy="282" r="220" fill="none" />
             {/* <g id="Group8">
 
            
@@ -496,16 +470,25 @@ export default function Why() {
             </clipPath>
           </defs>
         </svg>
+        <div
+          className="md:hidden absolute inset-0 mx-auto"
+          style={{
+            width: "440px",
+            height: "440px",
+            top: "62px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            zIndex: -1,
+          }}
+        >
+          <DitherGradient width={440} height={440} />
+        </div>
 
         <div className="absolute md:hidden top-[100%] py-1 bg-[#f0f0f0] z-40  left-[2%]">
           <Ayotomcs />
         </div>
 
-        <div className="absolute md:hidden top-[100%] py-1 md:top-[83%] pl-3 z-40 right-[2%] md:left-[20%]">
-          <h4 className=" text-[#2D2D2D] pt-1 text-xs md:text-lg">
-            © 2026 JustClarify
-          </h4>
-        </div>
+        <div className="absolute md:hidden top-[100%] py-1 md:top-[83%] pl-3 z-40 right-[2%] md:left-[20%]"></div>
       </div>
     </div>
   );
