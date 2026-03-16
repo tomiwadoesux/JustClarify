@@ -23,7 +23,7 @@ export default function Header() {
         <div className=" flex flex-col md:flex-row gap-4">
           <div className="flex px-6 py-5 left-[78.32%] absolute ">
             <OutlineButton
-              onClick={() => window.open("https://ayotomcs.me/", "_blank")}
+              onClick={() => window.open("https://chromewebstore.google.com/detail/justclarify/ggeikfbifbojgkgcehebpelplhajfffj", "_blank")}
             >
               <h1 className="text-xs md:text-sm self-center p-0 ">
                 Add to Chrome
@@ -49,7 +49,7 @@ export default function Header() {
         <div className=" flex flex-col md:flex-row gap-5">
           <div className="flex px-6 ">
             <OutlineButton
-              onClick={() => window.open("https://ayotomcs.me/", "_blank")}
+              onClick={() => window.open("https://chromewebstore.google.com/detail/justclarify/ggeikfbifbojgkgcehebpelplhajfffj", "_blank")}
             >
               <h1 className="text-xs md:text-sm self-center p-0 ">
                 Add to Chrome

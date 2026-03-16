@@ -174,7 +174,7 @@ export default function Why() {
           </h4>
         </div>
         <div className="absolute pt-4 top-[100%] md:pl-5 md:top-[38%] lg:top-[32%] right-[51%] md:right-[51%] lg:left-[50%]">
-          <OutlineButton className="px-1 md:px-3 py-1 text-nowrap text-xs md:text-sm lg:text-lg">
+          <OutlineButton onClick={() => window.open("https://chromewebstore.google.com/detail/justclarify/ggeikfbifbojgkgcehebpelplhajfffj", "_blank")} className="px-1 md:px-3 py-1 text-nowrap text-xs md:text-sm lg:text-lg">
             Get the Extension
           </OutlineButton>
         </div>
